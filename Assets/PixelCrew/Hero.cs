@@ -1,22 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private float _direction;
-    public void SetDirection(float Direction)
+    private Vector2 _direction;
+    public void SetDirection(Vector2 Direction)
     {
         _direction = Direction;
     }
     private void Update()
     {
-        if (_direction != 0)
+        if (_direction.magnitude > 0)
         {
             var deltaSpeed = _direction * _speed * Time.deltaTime;
-            var newXPosition = transform.position.x + deltaSpeed;
-            transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + deltaSpeed.x, transform.position.y + deltaSpeed.y, transform.position.z);
         }
 
     }
