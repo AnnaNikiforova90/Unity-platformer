@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HeroInputReader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]private Hero _hero;
+    
+    public void OnHorizontalMovement(InputAction.CallbackContext context)
     {
-        
+        var direction = context.ReadValue<float>();
+        _hero.SetDirection(direction);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnSaySomething(InputAction.CallbackContext context)
     {
+        if (context.canceled)
+        {
+            _hero.SaySomething();
+        }
         
     }
 }

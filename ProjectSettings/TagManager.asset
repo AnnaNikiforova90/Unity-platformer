@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back_Ground
+    uniqueID: 3398233631
+    locked: 0
+  - name: Rear_Decor
+    uniqueID: 3888137817
+    locked: 0
+  - name: Ground
+    uniqueID: 715427291
+    locked: 0
+  - name: Props
+    uniqueID: 1597168973
+    locked: 0
+  - name: Hero
+    uniqueID: 3315904637
+    locked: 0
+  - name: Front_Decor
+    uniqueID: 1424236629
+    locked: 0
